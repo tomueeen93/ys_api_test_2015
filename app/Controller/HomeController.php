@@ -8,11 +8,14 @@ class HomeController extends AppController {
 		// API のパラメータ設定
 		$api = 'http://shopping.yahooapis.jp/ShoppingWebService/V1/json/itemSearch';
 		$appid = 'dj0zaiZpPThma1IzcVpTRThzViZzPWNvbnN1bWVyc2VjcmV0Jng9YzY-';
+		$word = 'ゲーム';
+		$hits = 50;
 
 		$params = array(
-			'query' => 'vaio',
-			'hits' => 50
+			'query' => $word,
+			'hits' => $hits
 		);
+		
 		// GETクエリの生成
 		$ch = curl_init($api.'?'.http_build_query($params));
 		curl_setopt_array($ch, array(
@@ -31,7 +34,7 @@ class HomeController extends AppController {
 		// jsonの文字列を配列に変換
 		$json_array = json_decode($result,true);
 		
-		$this -> set('query', "vaio");
+		$this -> set('query', $word);
 		$this -> set('api_result', $json_array);
 	}
 }
