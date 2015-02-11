@@ -39,6 +39,15 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	<div id="container">
 		<div id="header">
 			<h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1>
+			<!-- start 検索フォーム-->
+			<?php 
+				echo $this->Form->create(null,array(
+		   		 'url' => array('controller' => 'home', 'action' => 'search')
+				));
+			?>
+			<?php echo $this->Form->input('search_word'); ?> 
+			<?php echo $this->Form->end('SEACH'); ?>
+			<!-- end 検索フォーム -->
 		</div>
 		<div id="content">
 
