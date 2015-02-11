@@ -7,10 +7,11 @@
 		var json_array = JSON.parse(json_string);
 		
 	</script>
+	
 	<?php $items = $api_result["ResultSet"][0]["Result"] ?>
 	
-	
 	<h2>検索ワード : <?php print_r($query) ?></h2>
+	
 	<h2>商品数 : <?php print_r(count($items)-3) ?></h2>
 	<p></p>
 	<h3>商品一覧</h3>
