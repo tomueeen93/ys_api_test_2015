@@ -36,7 +36,6 @@ class HomeController extends AppController {
 		// jsonの文字列を配列に変換
 		$json_array = json_decode($result,true);
 		
-<<<<<<< HEAD
 		$this -> set('query', $word);
 		$this -> set('api_result', $json_array);
 	}
