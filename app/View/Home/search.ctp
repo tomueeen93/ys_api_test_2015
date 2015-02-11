@@ -18,9 +18,17 @@
 <?php foreach ((array)$items as $each): ?>
 	<?php if(array_key_exists("Name",(array)$each)) {?>
 		<ul>
-			<div >
-				<li>商品名 : <?php print_r($each["Name"]) ?></li>
-				<li>値段 : <?php print_r($each["Price"]["_value"]) ?></li>  
+			<div class="content">
+				<div class="content_image">
+					<?php echo $this->Html->link(
+					 	$this->Html->image($each['Image']['Medium'], array('alt' => $each['Image']['Id'])),
+					 	$each['Url'],
+					 	array('target' => '_blank', 'escape' => false)
+					); ?>
+				
+				</div>  
+				<div>商品名 : <?php print_r($each["Name"]) ?></div>
+				<div>値段 : ￥<?php print_r($each["Price"]["_value"]) ?></div>
 			</div>
 		</ul>
 	<?php } ?>
