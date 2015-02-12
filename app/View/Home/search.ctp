@@ -1,17 +1,23 @@
-<h2>Search Result</h2>
 <script>
 	console.log(<?php echo json_encode($api_result) ?>);
 	
 	var json_string = <?php echo json_encode($api_result) ?>;
-	var json_array = JSON.parse(json_string);
+	//var json_array = JSON.parse(json_string);
 	
 </script>
 
 <?php $items = $api_result["ResultSet"][0]["Result"] ?>
 
-<h2>検索ワード : <?php print_r($query) ?></h2>
+<div id="search-option" class="row">
+	<div class="col-xs-0 col-sm-2 col-md-2 col-lg-2"></div>
+	<div id="search-option-word" class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+		<h5>検索ワード : <?php print_r($query) ?></h5>
+	</div>
+	<div id="search-option-hits" class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+		<h5>表示数 : <?php print_r(count($items)-3) ?></h5>
+	</div>
+</div>
 
-<h2>表示数 : <?php print_r(count($items)-3) ?></h2>
 <p></p>
 <h3>商品一覧</h3>
 <!-- li><?//php var_dump($items) ?></li> -->
