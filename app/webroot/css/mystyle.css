@@ -1,0 +1,96 @@
+/*
+ * 初期化
+ */
+body, * {
+    margin: 0px;
+    padding: 0px;
+    
+}
+body{
+    background-color: rgba(232,232,232,1.0);
+}
+/**
+ *     bootstrap関係
+ */
+.row {
+    margin: 0px;
+    padding: 0px;
+}
+.container {
+    margin: 0 auto;
+    padding: 0px;
+}
+/*
+ * センタリング用のクラス
+ */
+.centr {
+    position: relative; /* 絶対配置の基準点 */
+    text-align: center; /* インライン要素の中央揃え */
+}
+.centr > * {
+    position: relative; /* 絶対配置 */
+    top: 50%; /* 上から半分 */
+    left: 50%; /* 左から半分 */
+    width: 100%; /* 大枠と同じ幅に */
+    margin: -1.5em 0 0 -50%; /* 要素の大きさの半分 */
+}
+.centr-hrizontal {
+
+}
+/**
+ *     headerの設定
+ */
+#header {
+    font-family: cursive;
+    padding:0 5px 10px 5px;
+    float: left;
+    background-color: rgba(185,5,4,1.0);
+    color: white;
+    border-radius: 0 0 10px 10px;
+    /* box-shadow */
+    box-shadow: rgba(18, 44, 77, 0.74902) 0px 8px 12px -6px;
+    -webkit-box-shadow: rgba(18, 44, 77, 0.74902) 0px 8px 12px -6px;
+    -moz-box-shadow: rgba(18, 44, 77, 0.74902) 0px 8px 12px -6px;
+}
+#header a {
+    padding: 5px 0 5px 0;
+}
+#header a: link {
+    color: white;
+    text-decoration: none
+}
+#header a:visited {
+    color: white;
+    text-decoration: none
+}
+#header a:hover {
+    color: white;
+    text-decoration: none
+}
+#header a:active {
+    color: white;
+    text-decoration: none
+}
+#header #title {
+    text-align: center;
+}
+#header #searchForm{
+    float:right;
+}
+#header #search-form-textarea {
+    padding-top:5px;
+}
+#search-form-textarea label {
+    padding-right: 5px;
+}
+#search-form-textarea div{
+    float:right;
+}
+#header #search-form-button{
+    position:relative;
+    top:50%;
+}
+#header #search_word{
+    font-family:Arial;
+    color:rgb(153,1,0);
+}
