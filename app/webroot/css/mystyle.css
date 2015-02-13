@@ -1,0 +1,127 @@
+/*
+ * 初期化
+ */
+body, * {
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    background-color: rgba(232,232,232,1.0);
+}
+/**
+ *     bootstrap関係
+ */
+.row {
+    margin: 0px;
+    padding: 0px;
+}
+.container {
+    margin: 0 auto;
+    padding: 0px;
+}
+/*
+ * センタリング用のクラス
+ */
+.centr {
+    position: relative; /* 絶対配置の基準点 */
+    text-align: center; /* インライン要素の中央揃え */
+}
+.centr > * {
+    position: relative; /* 絶対配置 */
+    width: 100%; /* 大枠と同じ幅に */
+}
+.centr-hrizontal {
+
+}
+/**
+ *     headerの設定
+ */
+#header {
+    font-family: cursive;
+    padding: 0 5px 10px 5px;
+    float: left;
+    background-color: rgba(185,5,4,1.0);
+    color: white;
+    border-radius: 0 0 10px 10px;
+    /* box-shadow */
+    box-shadow: rgba(18, 44, 77, 0.74902) 0px 8px 12px -6px;
+    -webkit-box-shadow: rgba(18, 44, 77, 0.74902) 0px 8px 12px -6px;
+    -moz-box-shadow: rgba(18, 44, 77, 0.74902) 0px 8px 12px -6px;
+}
+#header a {
+    padding: 5px 0 5px 0;
+}
+#header a: link {
+    color: white;
+    text-decoration: none
+}
+#header a:visited {
+    color: white;
+    text-decoration: none
+}
+#header a:hover {
+    color: white;
+    text-decoration: none
+}
+#header a:active {
+    color: white;
+    text-decoration: none
+}
+#header #title {
+    text-align: center;
+}
+#header #searchForm {
+    float: right;
+}
+#header #search-form-textarea {
+    padding-top: 5px;
+}
+#search-form-textarea label {
+    padding-right: 5px;
+}
+#search-form-textarea div {
+    float: right;
+}
+#header #search-form-button {
+    position: relative;
+    top: 50%;
+}
+#header #search_word {
+    font-family: Arial;
+    color: rgb(153,1,0);
+}
+/**
+ *     商品関係
+ */
+.content {
+    background-color: rgba(246,246,246,1.0);
+    padding: 3px;
+    border-radius: 8px;
+    box-shadow: rgba(18, 44, 77, 0.1) 0px 0px 1px 1px;
+}
+.content:hover {
+    box-shadow: rgba(18, 44, 77, 0.5) 0px 0px 2px 1px;
+    z-index: 3;
+}
+.content .content-image {
+    margin-top: 3px;
+}
+.content img {
+    border-radius: 5px;
+}
+.content .content-name {
+    overflow: hidden;
+    width: 100%;
+    height: 3em;
+}
+.content .content-name {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.content .content-rank {
+    font-family: cursive;
+    font-size: medium;
+    text-align: center;
+}
+
