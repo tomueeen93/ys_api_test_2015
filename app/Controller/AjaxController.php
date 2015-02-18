@@ -10,9 +10,9 @@ class AjaxController extends AppController {
     /**
      * Ajax用関数
      */
-    function ajaxTest() {
+    function ajaxTest($search_prefecture, $request_offset) {
     	// CakePHPのレンダー機能を無効化
-        $this->autoRender = FALSE;
+        $this->autoRender = false;
 		
 		// Ajaxのリクエストかどうかを判断
         if($this->request->is('ajax')) {
@@ -20,9 +20,9 @@ class AjaxController extends AppController {
             // API のパラメータ設定
 			$api = 'http://shopping.yahooapis.jp/ShoppingWebService/V1/json/itemSearch';
 			$appid = 'dj0zaiZpPThma1IzcVpTRThzViZzPWNvbnN1bWVyc2VjcmV0Jng9YzY-';
-			$word = $this->request->data['search_prefecture'];
+			$word = $search_prefecture;
 			$hits = 50;
-			$offset = $this->request->data['offset'];
+			$offset = $request_offset;
 	
 			$params = array(
 				'query' => $word,

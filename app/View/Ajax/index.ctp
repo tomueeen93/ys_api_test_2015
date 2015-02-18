@@ -8,7 +8,7 @@
 	}
 </script>
 
-<button onclick="ajaxMethod();" class="btn btn-default">ajaxTest</button>
+<button onclick="ajaxMethod(5,15);" class="btn btn-default">ajaxTest</button>
 
 <div id="search-result" class="row">
 	<h3>商品一覧</h3>
