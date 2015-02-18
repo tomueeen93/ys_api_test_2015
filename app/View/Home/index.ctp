@@ -1,4 +1,5 @@
 <script>
+	
 	console.log(<?php echo json_encode($api_result) ?>);
 	
 	var json_string = <?php echo json_encode($api_result) ?>;

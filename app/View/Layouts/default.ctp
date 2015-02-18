@@ -30,7 +30,12 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 
 		//echo $this->Html->css('cake.generic');
 		echo $this->Html->css('bootstrap');
+		echo $this->Html->css('flipsnap');
 		echo $this->Html->css('mystyle');
+		
+		echo $this->Html->script('jquery-2.1.3');
+		echo $this->Html->script('flipsnap');
+		echo $this->Html->script('ajaxtest');
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');

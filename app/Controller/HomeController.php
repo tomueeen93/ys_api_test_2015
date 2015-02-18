@@ -112,6 +112,9 @@ class HomeController extends AppController {
 		$this -> set('query', $word);
 		$this -> set('api_result', $json_array);
 	}
+	public function flipsnap(){
+		
+	}
 	/**
 	 * @brief 特殊文字を HTML エンティティに変換する
 	 * @param string $str 変換したい文字列
