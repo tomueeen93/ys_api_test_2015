@@ -1,41 +1,54 @@
 <script>
-	//console.log(<?php //echo json_encode($api_result) ?>);
-	
-	//var json_string = <?php //echo json_encode($api_result) ?>;
-	// var json_array = JSON.parse(json_string);
-	function setResultArray(array){
-		console.log(array);
+	var selected_id = <?php echo $search_id ?>;
+	console.log("selected_id : \t"+selected_id);
+	setPrefecture(selected_id);
+	setFlame();
+	// ajaxの通信が終了して帰ってきたデータ
+	function setResultArray(response){
+		console.log(response);
+		// オフセットを追加（ホントは取得したデータの数だけ追加）
+		load_items_offset += 20;
+		// 取得したデータを描写開始
+		addLoadedData(response);
+	}
+	function ajaxloader(){
+		console.log("loader lunch");
+		load_items(selected_prefecture_name,load_items_offset);
 	}
 </script>
 
-<button onclick="ajaxMethod(5,15);" class="btn btn-default">ajaxTest</button>
-
-<div id="search-result" class="row">
-	<h3>商品一覧</h3>
-	<!-- li><?//php var_dump($items) ?></li> -->
-	<?php foreach ((array)$items as $each): ?>
-			<?php if(array_key_exists("Name",(array)$each)) {?>
-				<div class="content col-xs-12 col-sm-6 col-md-4 col-lg-3">
-					<div class="content-image centr col-xs-2 col-sm-2 col-md-12 col-lg-12">
-						<div>
-							<?php echo $this->Html->link(
-							 	$this->Html->image($each['Image']['Medium'], array('alt' => $each['Image']['Id'])),
-							 	$each['Url'],
-							 	array('target' => '_blank', 'escape' => false)
-							); ?>
-						</div>
-					</div>
-					<div class="content-name col-xs-7 col-sm-7 col-md-12 col-lg-12">
-						<?php echo $this->Html->link(
-							$each["Name"],
-							$each['Url'],
-							array('target' => '_blank', 'escape' => false)
-						); ?>
-					</div>
-					<div class="content-price col-xs-7 col-sm-7 col-md-12 col-lg-12">
-						￥<?php print_r($each["Price"]["_value"]) ?>
-					</div>
-				</div>	
-			<?php } ?>
-	<?php endforeach; ?>
+<div class="row">
+<div class="viewport col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div id="mainflip" class="flipsnap">
+       <div class="item">
+       		<div id="prefecture-name" class="row">
+       			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+       				<h2><</h2>
+       			</div>
+       			<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+       				<h2 class="prefecture-name">
+       					群馬
+       				</h2>
+       			</div>
+       			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+       				<h2>></h2>
+       			</div>
+       		</div>
+       		<div id="item_id_22" class="row">
+				<!-- here is items space -->
+       		</div>
+       </div>
+       <div class="item">
+       		<h2>静岡</h2>
+       </div>
+       <div class="item">
+       		<h2>山梨</h2>
+       </div>         
+    </div>
 </div>
+</div>
+<div class="row">
+	<button onclick="ajaxloader();" class="btn btn-default">NEXT</button>
+</div>
+
+<script>Flipsnap('.flipsnap');</script>

@@ -26,17 +26,24 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		<?php echo $this->fetch('title'); ?>
 	</title>
 	<?php
+		// meta
 		echo $this->Html->meta('icon');
 
+		// CSS
 		//echo $this->Html->css('cake.generic');
 		echo $this->Html->css('bootstrap');
-		echo $this->Html->css('flipsnap');
 		echo $this->Html->css('mystyle');
+		echo $this->Html->css('flipsnap');
 		
+		// Script
 		echo $this->Html->script('jquery-2.1.3');
-		echo $this->Html->script('flipsnap');
+		echo $this->Html->script('prefectures_data');
 		echo $this->Html->script('ajaxtest');
-
+		echo $this->Html->script('flipsnap');
+		echo $this->Html->script('myflipsnap');
+		echo $this->Html->script('myscript');
+		
+		// Fetch
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
@@ -44,45 +51,11 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	?>
 </head>
 <body>
-	<div id="container" class="container">
-		<div id="row">
-		  	<div id="header" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-				<!-- start title -->
-				<div id="title" class="row">
-					<div id="" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
-						<h1 >
-							<?php echo $this->Html->link($cakeDescription, array('controller' => 'home','action' =>'index')); ?>
-						</h1>
-					</div>
-				</div>
-				<!-- end title -->
-				<!-- start 検索フォーム-->
-				<div id="search-form" class="row">
-					<div class="blank col-xs-0 col-sm-2 col-md-2 col-lg-3"></div>
-					<div id="search-form-textarea" class="col-xs-8 col-sm-5 col-md-5 col-lg-4">
-						<?php 
-							echo $this->Form->create(null,array(
-					   		 'url' => array('controller' => 'home', 'action' => 'search')
-							));
-						?>
-						<?php echo $this->Form->input('search_word'); ?> 
-					</div>
-					<div id="search-form-button" class="col-xs-4 col-sm-1 col-md-1 col-lg-1">
-						<?php echo $this->Form->end(array('label'=>'SEARCH','class'=>'btn btn-default')); ?>
-					</div>
-				</div>
-				<!-- end 検索フォーム -->
-			</div>
-			<div id="content" class="row">
-	
-				<?php echo $this->Session->flash(); ?>
-	
-				<?php echo $this->fetch('content'); ?>
-			</div>
-			<div id="footer" class="row">
-				
-			</div>
-		</div>
+<div id="container">
+	<div id="content">
+		<?php echo $this->Session->flash(); ?>
+		<?php echo $this->fetch('content'); ?>
 	</div>
+</div>
 </body>
 </html>

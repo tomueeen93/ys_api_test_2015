@@ -1,11 +1,13 @@
 .viewport {
+    /*width: 320px;*/
     overflow: hidden;
     margin: 0 auto;
     -webkit-transform: translateZ(0); /* Optional: When heavy at iOS6+ */
+    padding: 0px;
 }
 
 .flipsnap {
-    /* 320px(item width) * 3(item count) */
+    /*width: 960px;*/ /* 320px(item width) * 3(item count) */
 }
 
 .flipsnap:after {
@@ -14,13 +16,14 @@
     clear: both;
     height: 0;
 }
-
+.items {
+    height: auto;
+    margin: 0 auto;
+}
 .item {
     float: left;
-    font-size: 50px;
+    /*width: 310px;*/
     text-align: center;
-    padding: 50px 0;
-    background: #EFEFEF;
-    border: 5px solid #999;
+    background: #BBBBEB;
     color: #666;
 }

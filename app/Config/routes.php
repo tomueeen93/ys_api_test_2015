@@ -41,3 +41,5 @@
  * the built-in default routes.
  */
 	require CAKE . 'Config' . DS . 'routes.php';
+// my routes
+	Router::connect('/Ajax/ajaxTest', array('controller'=>'ajax','action'=>'ajaxTest',''));
