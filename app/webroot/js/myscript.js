@@ -7,6 +7,8 @@ var load_items_offset = 0;
 //　ドキュメントが読み込まれたら実行する処理
 $(document).ready(function(){
     // 実行したい処理
+	setFlame();
+	initFlipsnap();
 });
 // ウィンドウが読み込まれたら実行する処理
 $(window).load(function () {
@@ -60,6 +62,7 @@ function addLoadedData(response){
  * @param search_prefecture_id 検索したい県のID
  */
 function setPrefecture(sid){
+	console.log("set prefecture");
 	// 選択したidを登録
 	selected_prefecture_id = sid;
 	// idから地域を特定
@@ -80,11 +83,12 @@ function setPrefecture(sid){
  * flipsnapを表示させてメニューバーに文字を表示する
  */
 function setFlame(){
+	console.log("set flame");
 	// 選んだ県を一番に追加する
 	var parent = $("<div>").addClass("item");
 	var child1 = $("<div>").attr("id","prefecture_"+selected_prefecture_id).addClass("row");
 	var child1_1 = $("<div>").addClass("col-xs-12 col-sm-12 col-md-12 col-lg-12");
-	var child1_1_1 = $("<h2>").addClass("prefecutre-name").text("<\t\t"+selected_prefecture_name+"\t\t>");
+	var child1_1_1 = $("<h2>").addClass("prefecutre-name").text(selected_prefecture_name);
 	child1_1.append(child1_1_1);
 	child1.append(child1_1);
 	parent.append(child1);
@@ -94,14 +98,14 @@ function setFlame(){
 	// その他の県を追加
 	for (var key in selected_regions) {
 		if(key != selected_prefecture_id){
-			var inparent = $("<div>").addClass("item");
-			var inchild1 = $("<div>").attr("id","prefecture_"+key).addClass("row");
-			var inchild1_1 = $("<div>").addClass("col-xs-12 col-sm-12 col-md-12 col-lg-12");
-			var inchild1_1_1 = $("<h2>").addClass("prefecutre-name").text("<\t\t"+selected_regions[key]+"\t\t>");
-			inchild1_1.append(inchild1_1_1);
-			inchild1.append(inchild1_1);
-			parent.append(inchild1);
-			$("#mainflip").append(inparent);
+			var parent = $("<div>").addClass("item");
+			var child1 = $("<div>").attr("id","prefecture_"+key).addClass("row");
+			var child1_1 = $("<div>").addClass("col-xs-12 col-sm-12 col-md-12 col-lg-12");
+			var child1_1_1 = $("<h2>").addClass("prefecutre-name").text("<\t\t"+selected_regions[key]+"\t\t>");
+			child1_1.append(child1_1_1);
+			child1.append(child1_1);
+			parent.append(child1);
+			$("#mainflip").append(parent);
 		}
 	}
 }

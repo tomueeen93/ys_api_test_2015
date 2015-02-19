@@ -1,8 +1,8 @@
 <script>
 	var selected_id = <?php echo $search_id ?>;
 	console.log("selected_id : \t"+selected_id);
+	
 	setPrefecture(selected_id);
-	setFlame();
 	// ajaxの通信が終了して帰ってきたデータ
 	function setResultArray(response){
 		console.log(response);
@@ -27,7 +27,7 @@
        			</div>
        			<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
        				<h2 class="prefecture-name">
-       					群馬
+       					静岡
        				</h2>
        			</div>
        			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
@@ -37,13 +37,7 @@
        		<div id="item_id_22" class="row">
 				<!-- here is items space -->
        		</div>
-       </div>
-       <div class="item">
-       		<h2>静岡</h2>
-       </div>
-       <div class="item">
-       		<h2>山梨</h2>
-       </div>         
+       </div>    
     </div>
 </div>
 </div>
